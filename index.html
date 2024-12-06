@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#box{
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+    border-radius: 50%;
+}
+.section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 100px;
+}
+.hii{
+    display: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+    </style>
+</head>
+<body>
+    <h1 class="hii">TRAFFIC LIGHT</h1>
+    <div class="section">
+        <div id ="box" draggable="true"></div>
+        <div id="box" class="sunTwo" draggable="true"></div>
+        <div id="box" class="sun3" draggable="true"></div>
+    </div>
+    <button>Click me</button>
+    <script>
+        const sunlight=()=>{
+            let sun=document.getElementById('box')
+            let sunTwo=document.getElementsByClassName('sunTwo') [0]
+            let sun3=document.getElementsByClassName('sun3') [0]
+            sun.addEventListener("drag",()=>{
+                sun.style.boxShadow="10px 10px 100px 10px yellow";
+                sun.style.backgroundColor="red";
+            })
+            sun.addEventListener("dragleave",()=>{
+                sun.style.boxShadow="10px 10px 100px 10px gray";
+                sun.style.backgroundColor="gray";    
+            })
+            sunTwo.addEventListener("dragenter",()=>{
+                sunTwo.style.boxShadow="10px 10px 100px 10px yellow";
+                sunTwo.style.backgroundColor="yellow";
+            })
+            sunTwo.addEventListener("click",()=>{
+                sunTwo.style.boxShadow="10px 10px 100px 10px gray";
+                sunTwo.style.backgroundColor="gray";
+            })
+            sun3.addEventListener("drag",()=>{
+                sun3.style.boxShadow="10px 10px 100px 10px gray";
+                sun3.style.backgroundColor="green";
+            })
+            sun3.addEventListener("click",()=>{
+                sun3.style.boxShadow="10px 10px 100px 10px gray";
+                sun3.style.backgroundColor="gray";
+            })
+        }
+        sunlight()
+    </script>
+</body>
+</html>
